@@ -1,6 +1,6 @@
 # Bundle_Deployer
 # Instruction
-zip structure
+zip structure  
 	src/
 		old_text.txt
 	build/
