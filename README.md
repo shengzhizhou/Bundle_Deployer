@@ -34,6 +34,14 @@ Required Arguments:
 
 #Bundle_Deployer
 ~~~
+Required Arguments:
+
+-h, --help            show this help message and exit
+-dp DESTPATH, --destpath DESTPATH
+                        Input destination Repo Local Path
+-rp ROOTPATH, --rootpath ROOTPATH
+                        Input Extraction Folder Root Path
+
 ~~~
 #cmd Sample
 ~~~
