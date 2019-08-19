@@ -37,10 +37,8 @@ Required Arguments:
 Required Arguments:
 
 -h, --help            show this help message and exit
--dp DESTPATH, --destpath DESTPATH
-                        Input destination Repo Local Path
--rp ROOTPATH, --rootpath ROOTPATH
-                        Input Extraction Folder Root Path
+-dp, --destpath       Input destination Repo Local Path
+-rp, --rootpath       Input Unzipped Folder Root Path
 
 ~~~
 #cmd Sample
@@ -48,4 +46,6 @@ Required Arguments:
 
 python.exe bundle_packager.py -sp C:\Users\szhou\Desktop\Test\BundleTest -zp C:\Users\szhou\Desktop\copyfile -sb prestage -db master
 
+
+python.exe C:\Users\szhou\PycharmProjects\BundleProject\sample\bundle_deployer.py -dp C:\Users\szhou\Desktop\master -rp C:\Users\szhou\Desktop\copyfile
 ~~~
