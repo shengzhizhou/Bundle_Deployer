@@ -1,3 +1,4 @@
+import json
 import shutil
 import git
 from zipfile import ZipFile
@@ -12,7 +13,7 @@ def create_bundle_zip(args):
         for stats in get_diff_info(args.srcpath, args.srcbranch, args.destbranch):
             if stats.get("type") != 'D':
                 add_files(stats.get("path"), args)
-                zipfile.write(os.path.join(args.zippath, "src", stats.get('path')),  # from directory
+                zipfile.write(os.path.join(args.zippath, "src", stats.get('path')),  # zip file from directory
                               os.path.join("src", stats.get('path')))  # to directory
         zipfile.write(os.path.join(args.zippath, "build", "manifest.txt"), os.path.join("build", "manifest.txt"))
     delete_bundle_dir(args)
@@ -31,6 +32,7 @@ def manifest_info_text(args):
         txt += str(stats) + ","
     txt = txt[:-1]
     txt += "]}"
+    txt = txt.replace("\'", "\"")
     return txt
 
 
@@ -71,14 +73,14 @@ def get_diff_info(path, src_branch, dest_branch):
 def main():
     parser = argparse.ArgumentParser(description='Create Bundle')
     parser.add_argument('-sp', '--srcpath', required=True, help='Input src Repo Local Path')
-    # parser.add_argument('-dp', '--destpath', required=True, help='Input destination Repo Local Path')
     parser.add_argument('-zp', '--zippath', required=True, help='Input root Path for bundle zip file')
     parser.add_argument('-sb', '--srcbranch', required=True, help='Input src branch')
     parser.add_argument('-db', '--destbranch', required=True, help='Input destination branch')
 
     args = parser.parse_args()
+    print("Start creating bundle zip file\n")
     create_bundle_zip(args)
-    print("Success")
+    print("\nSuccess")
 
 
 if __name__ == '__main__':
