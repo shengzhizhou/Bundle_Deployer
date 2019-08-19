@@ -1,20 +1,19 @@
 # Bundle_Deployer
 
 # Instruction
-# 
-zip structure
+# zip structure
 	
 ~~~
 src/
-		
+
 	old_text.txt
 	
 build/
-				
+
 	manifest.py
 
 ~~~
-#Bundle_Packager
+# Bundle_Packager
 ~~~
 
 Required Arguments:
@@ -32,7 +31,7 @@ Required Arguments:
 ~~~
 
 
-#Bundle_Deployer
+# Bundle_Deployer
 ~~~
 Required Arguments:
 
@@ -41,9 +40,8 @@ Required Arguments:
 -rp, --rootpath       Input Unzipped Folder Root Path
 
 ~~~
-#cmd Sample
+# Cmd Sample
 ~~~
-
 python.exe bundle_packager.py -sp C:\Users\szhou\Desktop\Test\BundleTest -zp C:\Users\szhou\Desktop\copyfile -sb prestage -db master
 
 
