@@ -1,7 +1,7 @@
 # Bundle_Deployer
 # Instruction
-zip structure  
-	src/
+zip structure
+	src/  
 		old_text.txt
 	build/
 		deployer.py
